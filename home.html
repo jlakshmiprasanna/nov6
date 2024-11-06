@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <a href="">AboutUs</a>
+    <a href="">ContactUS</a>
+    <a href="products.html">Explore Products</a>
+    <script>
+        if(localStorage.getItem("isLoggedIn") !== "true"){
+            window.location.href="login.html"
+        }
+    </script>
+</body>
+</html>

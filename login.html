@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" onsubmit="login(event)">
+    <input type="text" name="" id="name" required>
+    <input type="password" name="" id="password" required>
+    <button type="submit">login</button>
+    </form>
+    <script>
+        function login(event){
+            event.preventDefault()
+
+            let inputName=document.getElementById("name");
+            let inputPassword=document.getElementById("password");
+
+            let userName=localStorage.getItem("name")
+            let u_password=localStorage.getItem("password")
+
+            if(userName === inputName.value && u_password === inputPassword.value){
+                if(screen < 500){
+                    alert("screen size is very low, we cant proceed furthur")
+                }else{
+                    alert("successfully logged in!!!")
+                    localStorage.setItem("isLoggedIn","true")
+                    window.location.href="home.html"
+                  
+                }
+            }else{
+                alert("oops wrong credentials!!!")
+            }
+            inputName.value=""
+            inputPassword.value=""
+        }
+    </script>
+</body>
+</html>
